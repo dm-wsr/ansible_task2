@@ -1,0 +1,20 @@
+- name: Allow port access
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    proto: tcp
+  with_items:
+    - '80'
+    - '8080'
+    - '1834'
+
+- name: Activate UFW
+  ufw:
+    state: enabled
+    policy: allow
+
+- name: Restart UFW
+  ansible.builtin.systemd:
+    name: ufw
+    state: restarted
+    daemon_reload: yes

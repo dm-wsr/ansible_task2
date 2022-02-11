@@ -3,3 +3,9 @@
     dest: /etc/ssh/sshd_config
     regexp: "^#Port 22"
     line: "Port 1834"
+
+- name: Restart SSHD
+  ansible.builtin.systemd:
+    name: sshd
+    state: restarted
+    daemon_reload: yes
