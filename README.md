@@ -1,3 +1,3 @@
 # ansible_task2
-BaseConfig:
+BaseConfig:\
 ansible-playbook -K run.yml --ask-pass -i hosts
