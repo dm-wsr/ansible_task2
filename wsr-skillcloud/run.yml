@@ -5,3 +5,4 @@
   tasks:
     - import_tasks: tasks/packageInstall.yml
     - import_tasks: tasks/CreateUser.yml
+    - import_tasks: tasks/copyNginxFiles.yml

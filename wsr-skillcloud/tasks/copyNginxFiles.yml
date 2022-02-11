@@ -1,0 +1,13 @@
+- name: Create folder for Nginx
+  file:
+    path: /skillcloud-nginx
+    state: directory
+
+- name: Copy files for Nginx
+  copy: src={{ item }} dest=/skillcloud-nginx/ mode=0777
+  with_items:
+    - 'docker-compose.yml'
+    - 'Dockerfile-balance'
+    - 'Dockerfile-site'
+    - 'index.html'
+    - 'nginx.conf'

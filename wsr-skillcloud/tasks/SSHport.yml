@@ -1,0 +1,5 @@
+- name: Changing SSH port to 1834
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^#Port 22"
+    line: "Port 1834"

@@ -3,8 +3,16 @@
     update_cache: true
     force_apt_get: true
    
-- name: Install curl
+- name: Install curl and docker
   apt:
-    pkg: curl
+    pkg: 
+        - curl
+        - docker
     state: latest
     update_cache: true
+
+- name: Copy compose-installer
+  copy: src=docker-compose.sh dest=/tmp/ mode=0777
+
+- name: Install docker-compose
+  command: sh /tmp/docker-compose.sh
