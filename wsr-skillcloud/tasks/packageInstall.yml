@@ -1,0 +1,10 @@
+- name: Update Packages
+  apt:
+    update_cache: true
+    force_apt_get: true
+   
+- name: Install curl
+  apt:
+    pkg: curl
+    state: latest
+    update_cache: true
